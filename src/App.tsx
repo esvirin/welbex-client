@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.css';
+import {Breadcrumb, Layout, Pagination, Table, Tag, Space, Row, Col} from 'antd';
+import HeaderBar from "./components/Header/HeaderBar";
+import TableOut from "./components/Table/TableOut";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const {Header, Content, Footer} = Layout;
+
+
+class App extends React.Component {
+    render() {
+        return (
+            <Layout style={{height: '100vh'}}>
+                <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>
+
+                    <HeaderBar/>
+
+                </Header>
+
+                <Content className="site-layout" style={{padding: '0 50px', marginTop: 64}}>
+
+
+                    <TableOut/>
+
+                </Content>
+                <Footer style={{textAlign: 'center'}}>Created by <a href="mailto:esvirin@mail.com">esvirin@mail.com</a>
+                </Footer>
+            </Layout>
+        );
+    }
 }
 
 export default App;
